@@ -107,11 +107,10 @@ OPENAI_API_KEY	  |   Your OpenAI API key.
      openai_chat_wrapper/
    │
    ├── openai_chat_wrapper/       # Main application module
-   │   ├── __init__.py            # Package initializer
+   │   ├── main.py            # Package initializer
    │   ├── wrapper.py             # Core wrapper logic
    │
    ├── example.py                 # Example script demonstrating usage
-   ├── tests/                     # Unit tests
    │   ├── test_wrapper.py        # Tests for the wrapper functionality
    │
    ├── README.md                  # Project documentation
