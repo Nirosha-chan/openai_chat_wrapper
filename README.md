@@ -41,6 +41,7 @@ This project is a Python application that provides a simple wrapper around the O
 
 1. Initialize the wrapper
 
+```bash
 from openai_chat_wrapper import OpenAIChatWrapper
 
 API_KEY = "your-api-key"
