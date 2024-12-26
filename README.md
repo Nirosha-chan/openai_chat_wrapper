@@ -110,7 +110,7 @@ OPENAI_API_KEY	  |   Your OpenAI API key.
    │   ├── main.py            # Package initializer
    │   ├── wrapper.py             # Core wrapper logic
    │
-   ├── funtion_example.py                 # Example script demonstrating usage
+   ├── funtion.py                 # Example script demonstrating for function calling usage
    │
    ├── README.md                  # Project documentation
    ├── .gitignore                 # Git ignore rules
