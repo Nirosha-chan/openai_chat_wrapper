@@ -54,6 +54,7 @@ class OpenAIChatWrapper:
                 messages=messages,
                 **kwargs
             )
+            
             return response.choices[0].message.content.strip()
         except Exception as e:
             print(f"An error occurred: {e}")
