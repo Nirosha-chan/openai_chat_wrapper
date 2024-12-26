@@ -29,63 +29,62 @@ This project is a Python application that provides a simple wrapper around the O
    git clone https://github.com/yourusername/openai_chat_wrapper.git
 
 
-2. Navigate to the project directory
-
+2. **Navigate to the project directory**
+   ```bash
    cd openai_chat_wrapper
 
-3. Install dependencies
-
+3. **Install dependencies**
+   ```bash
    pip install openai
 
 ## Usage
 
-1. Initialize the wrapper
+1. **Initialize the wrapper**
+   ```bash
+   from openai_chat_wrapper import OpenAIChatWrapper
 
-```bash
-from openai_chat_wrapper import OpenAIChatWrapper
+   API_KEY = "your-api-key"
+   chat_wrapper = OpenAIChatWrapper(key=API_KEY)
 
-API_KEY = "your-api-key"
-chat_wrapper = OpenAIChatWrapper(key=API_KEY)
+2. **Generate chat completions**
+   ```bash
+   messages = [
+       {"role": "system", "content": "You are a helpful assistant."},
+       {"role": "user", "content": "What is the capital of France?"}
+   ]
 
-2. Generate chat completions
+   response = chat_wrapper.chat_completion(messages)
+   print("Assistant:", response)
 
-messages = [
-    {"role": "system", "content": "You are a helpful assistant."},
-    {"role": "user", "content": "What is the capital of France?"}
-]
+3. **Customize parameters**
+   ```bash
+   response = chat_wrapper.chat_completion(
+       messages,
+       temperature=0.9,
+       max_tokens=50,
+       top_p=0.9
+   )
 
-response = chat_wrapper.chat_completion(messages)
-print("Assistant:", response)
-
-3. Customize parameters
-
-response = chat_wrapper.chat_completion(
-    messages,
-    temperature=0.9,
-    max_tokens=50,
-    top_p=0.9
-)
-
-4. Enable function calling
-
-functions = [{
-    "name": "example_function",
-    "description": "An example function.",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "param1": {"type": "string"},
-            "param2": {"type": "integer"}
-        },
-        "required": ["param1"]
-    }
-}]
-
-response = chat_wrapper.chat_completion(
-    messages,
-    function_call="auto",
-    functions=functions
-)
+4. **Enable function calling**
+   ```bash
+   functions = [{
+       "name": "example_function",
+       "description": "An example function.",
+       "parameters": {
+           "type": "object",
+           "properties": {
+               "param1": {"type": "string"},
+               "param2": {"type": "integer"}
+           },
+           "required": ["param1"]
+       }
+   }]
+   
+   response = chat_wrapper.chat_completion(
+       messages,
+       function_call="auto",
+       functions=functions
+   )
 
 ### Features
 
@@ -104,46 +103,33 @@ OPENAI_API_KEY	  |   Your OpenAI API key.
 
 
 ### Project Structure
-
-openai_chat_wrapper/
-
-openai_chat_wrapper/
-
-│
-├── openai_chat_wrapper/           # Main application module
-
-│   ├── __init__.py                # Package initializer
-
-│   ├── wrapper.py                 # Core wrapper logic
-│
-
-├── example.py                     # Example script demonstrating usage
-
-├── tests/                         # Unit tests
-
-│   ├── test_wrapper.py            # Tests for the wrapper functionality
-│
-
-├── README.md                      # Project documentation
-
-├── .gitignore                     # Git ignore rules
-
-├── requirements.txt               # Dependencies
-
+   ```bash
+     openai_chat_wrapper/
+   │
+   ├── openai_chat_wrapper/       # Main application module
+   │   ├── __init__.py            # Package initializer
+   │   ├── wrapper.py             # Core wrapper logic
+   │
+   ├── example.py                 # Example script demonstrating usage
+   ├── tests/                     # Unit tests
+   │   ├── test_wrapper.py        # Tests for the wrapper functionality
+   │
+   ├── README.md                  # Project documentation
+   ├── .gitignore                 # Git ignore rules
+   ├── requirements.txt           # Dependencies
 
 
 ### Example
 API Endpoint
 This wrapper can also be integrated into a larger application or REST API. Here's a sample request to fetch a chat completion:
+   ```bash
+   {
+     "messages": [
+       {"role": "user", "content": "What is the capital of France?"}
+     ]
+   }
 
-
-{
-  "messages": [
-    {"role": "user", "content": "What is the capital of France?"}
-  ]
-}
-
-* Response
+**Response**
 
 {
   "role": "assistant",
@@ -151,7 +137,7 @@ This wrapper can also be integrated into a larger application or REST API. Here'
 }
 
 
-### Testing
+### Testing  
 Running Tests
 To ensure the wrapper works correctly:
 
